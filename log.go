@@ -413,9 +413,7 @@ func (l *defaultRouter) onError(f func(err error, fields Fields, o Output)) {
 }
 
 func (l *defaultRouter) reportError(err error, fields Fields, o *Output) {
-	if l.onError != nil {
-		l.errorHandler(err, fields, *o)
-	}
+	l.errorHandler(err, fields, *o)
 }
 
 type writer struct {
